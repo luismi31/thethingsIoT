@@ -10,28 +10,28 @@ def setTempInt(random, db, thethings):
     print 'STORED: ' + data
     db.insertData(db,data,'internal','temp')
     print 'SENT DATA TO THINGS.IO'
-    thethings.sendData('temperature',data)
+    thethings.sendData('temperatureInt',data)
     
 def setTempExt(random, db, thethings):
     data = str(random.getTempExt())
     print 'STORED: ' + data
     db.insertData(db,data,'external','temp')
     print 'SENT DATA TO THINGS.IO'
-    thethings.sendData('temperature',data)
+    thethings.sendData('temperatureExt',data)
     
 def setHumInt(random, db, thethings):
     data = str(random.getHumInt())
     print 'STORED: ' + data
     db.insertData(db,data,'internal','hum')
     print 'SENT DATA TO THINGS.IO'
-    thethings.sendData('humidity',data)
+    thethings.sendData('humidityInt',data)
     
 def setHumExt(random, db, thethings):
     data = str(random.getHumExt())
     print 'STORED: ' + data
     db.insertData(db,data,'external','hum')
     print 'SENT DATA TO THINGS.IO'
-    thethings.sendData('humidity',data)
+    thethings.sendData('humidityExt',data)
 
 db = Database()
 random = RandomIot()
