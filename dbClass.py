@@ -4,7 +4,7 @@ class Database:
 
     host = 'localhost'
     user = 'root'
-    password = 'Bh31jds16'
+    password = 'smonker'
     db = 'IOTDB'
 
     def __init__(self):
