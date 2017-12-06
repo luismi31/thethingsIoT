@@ -37,7 +37,7 @@ db = Database()
 random = RandomIot()
 thethings = thethings("19sbFlk2ZtBRc7fNwagHZ-MgyrgQjaZP1gI9UbS5Aso")
 print "starting..."
-rt = RepeatedTimer(10, setTempInt, setTempExt, setHumInt, setHumExt, random, db, thethings)
+rt = RepeatedTimer(60, setTempInt, setTempExt, setHumInt, setHumExt, random, db, thethings)
 
 
 
