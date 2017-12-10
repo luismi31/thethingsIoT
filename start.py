@@ -39,15 +39,3 @@ thethings = thethings("19sbFlk2ZtBRc7fNwagHZ-MgyrgQjaZP1gI9UbS5Aso")
 print "starting..."
 rt = RepeatedTimer(60, setTempInt, setTempExt, setHumInt, setHumExt, random, db, thethings)
 
-
-
-'''
-try:
-    sleep(5) # your long-running job goes here...
-finally:
-    rt.stop() # better in a try/finally block to make sure the program ends!
-'''
-
-
-
-
