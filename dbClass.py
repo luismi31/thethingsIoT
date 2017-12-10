@@ -16,6 +16,7 @@ class Database:
         try:
             self.cursor.execute(query)
             self.connection.commit()
+            return True
         except:
             self.connection.rollback()
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
@@ -33,4 +34,5 @@ class Database:
         
     def insertData(self,db,value,name,type): 
         query = "INSERT INTO IOTDB.data (value, name, timestamp, type) VALUES (" + "'" + value + "','" + name + "','" + str(datetime.datetime.now()) + "','" + type + "');"
-        self.insert(query)
+        if self.insert(query):
+            print 'STORED: ' + value

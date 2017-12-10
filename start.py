@@ -3,34 +3,27 @@ from time import sleep
 from randomIot import RandomIot
 from timer import RepeatedTimer
 from dbClass import Database
+from actionTrigger import action
 from cloudConnector import thethings
 
 def setTempInt(random, db, thethings):
-    data = str(random.getTempInt())
-    print 'STORED: ' + data
+    data = action().lowTemp(random.getTempInt,21)
     db.insertData(db,data,'internal','temp')
-    print 'SENT DATA TO THINGS.IO'
     thethings.sendData('temperatureInt',data)
     
 def setTempExt(random, db, thethings):
-    data = str(random.getTempExt())
-    print 'STORED: ' + data
+    data = action().lowTemp(random.getTempExt,19)
     db.insertData(db,data,'external','temp')
-    print 'SENT DATA TO THINGS.IO'
     thethings.sendData('temperatureExt',data)
     
 def setHumInt(random, db, thethings):
     data = str(random.getHumInt())
-    print 'STORED: ' + data
     db.insertData(db,data,'internal','hum')
-    print 'SENT DATA TO THINGS.IO'
     thethings.sendData('humidityInt',data)
     
 def setHumExt(random, db, thethings):
     data = str(random.getHumExt())
-    print 'STORED: ' + data
     db.insertData(db,data,'external','hum')
-    print 'SENT DATA TO THINGS.IO'
     thethings.sendData('humidityExt',data)
 
 db = Database()

@@ -24,3 +24,4 @@ class RandomIot:
     
     def getHumExt(self):
         return float(decimal.Decimal(random.randrange(6300, 6500))/100)
+

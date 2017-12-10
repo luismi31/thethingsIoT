@@ -9,6 +9,7 @@ class thethings:
         try:
             self.connector.addVar(name, value)
             self.connector.write()
+            print 'SENT DATA TO THINGS.IO'
         except Exception as ex:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             message = template.format(type(ex).__name__, ex.args)
